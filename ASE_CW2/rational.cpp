@@ -95,25 +95,6 @@ bool Rational::operator>=(const Rational & r) const
  *  (a/b) / (c/d) = (a*d) / (b*c)  (division by zero throws a DivideByZeroError)
  */
 
-Rational Rational::operator+(const Rational & r) const
-{
-    return Rational(num + r.num, denom + r.denom);
-}
-
-Rational Rational::operator-(const Rational & r) const
-{
-    return Rational(num - r.num, denom - r.denom);
-}
-
-Rational Rational::operator*(const Rational & r) const
-{
-    return Rational(num * r.num, denom * r.denom);
-}
-
-Rational Rational::operator/(const Rational & r) const
-{
-    return Rational(num / r.denom, denom / r.num);
-}
 
 ////////////////////////////////////////////////////////////////////////////////
 
