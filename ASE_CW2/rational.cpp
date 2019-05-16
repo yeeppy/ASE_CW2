@@ -117,36 +117,35 @@ Rational Rational::operator/(const Rational & r) const
 
 ////////////////////////////////////////////////////////////////////////////////
 
-Rational & Rational::operator+=(const Rational & r)
+Rational Rational::operator+(const Rational & r) const
 {
-    num   += r.num;
-    denom += r.denom;
-    normalise();
-    return *this;
+	//return Rational(num + r.num, denom + r.denom);
+
+	return Rational(num * r.denom + denom * r.num, denom * r.denom);
+
 }
 
-Rational & Rational::operator-=(const Rational & r)
+Rational Rational::operator-(const Rational & r) const
 {
-    num   -= r.num;
-    denom -= r.denom;
-    normalise();
-    return *this;
+	//return Rational(num - r.num, denom - r.denom);
+
+	return Rational(num * r.denom - denom * r.num, denom * r.denom);
+
 }
 
-Rational & Rational::operator*=(const Rational & r)
+Rational Rational::operator*(const Rational & r) const
 {
-    num   *= r.num;
-    denom *= r.denom;
-    normalise();
-    return *this;
+	//return Rational(num * r.num, denom * r.denom);
+
+	return Rational(num * r.num, denom * r.denom);
+
 }
 
-Rational & Rational::operator/=(const Rational & r)
+Rational Rational::operator/(const Rational & r) const
 {
-    num   /= r.num;
-    denom /= r.denom;
-    normalise();
-    return *this;
+	//return Rational(num / r.denom, denom / r.num);
+	return Rational(num * r.denom, denom * r.num);
+
 }
 
 ////////////////////////////////////////////////////////////////////////////////
