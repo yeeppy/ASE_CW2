@@ -128,7 +128,43 @@ Rational Rational::operator/(const Rational & r) const
 	return Rational(num * r.denom, denom * r.num);
 
 }
+////////////////////////////////////////////////////////////////////////////////
 
+Rational & Rational::operator+=(const Rational & r)
+{	
+	//num += r.num;
+	//denom += r.denom;
+	*this = *this * r;
+	normalise();
+	return *this;
+}
+
+Rational & Rational::operator-=(const Rational & r)
+{
+	//num -= r.num;
+	//denom -= r.denom;
+	*this = *this * r;
+	normalise();
+	return *this;
+}
+
+Rational & Rational::operator*=(const Rational & r)
+{
+	//num *= r.num;
+	//denom *= r.denom;
+	*this = *this * r;
+	normalise();
+	return *this;
+}
+
+Rational & Rational::operator/=(const Rational & r)
+{
+	//num /= r.num;
+	//denom /= r.denom;
+	*this = *this * r;
+	normalise();
+	return *this;
+}
 ////////////////////////////////////////////////////////////////////////////////
 
 Rational Rational::abs(const Rational & r)
